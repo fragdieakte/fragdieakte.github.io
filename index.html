@@ -118,8 +118,25 @@ footer { color: var(--muted); font-size: 14px; display: grid; gap: 6px; border-t
 // Datenbestand: je Folge Teile, je Teil Zeilen (gesagter Satz + Belege)
 const IMG = "img/";
 const S = {
+  djv2425: { t: "Wildunfall-Statistik 2024/2025", pub: "Deutscher Jagdverband (DJV) · Infografik, Quelle: DJV-Handbuch 2026", url: "https://www.jagdverband.de/sites/default/files/2026-02/2026-02_Infografik_Wildunfall_Statistik_2024_2025.jpg" },
+  sjagdg: { t: "Sächsisches Jagdgesetz, § 2 Aufgefundenes Wild und Unfallwild", pub: "REVOSax · Fassung gültig ab 17.10.2026", url: "https://www.revosax.sachsen.de/vorschrift/12495-Saechsisches-Jagdgesetz" },
+  djv10: { t: "Daten und Fakten zu Wildunfällen in Deutschland – Bilanz 2009", pub: "Deutscher Jagdverband (DJV) · Faktenblatt · PDF", url: "https://www.jagdverband.de/sites/default/files/fact_sheet_wildunfallgeschehen2010_0.pdf" },
+  sachsen: { t: "Hinweise zum Vorgehen beim Fund toten Wildes und bei Unfallwild", pub: "Informationsblatt der Sächsischen Staatsministerien für Soziales und für Umwelt · Stand 05.06.2019 · PDF",
+    url: "https://www.wald.sachsen.de/Informationsblatt_totesWildUnfallwild2019.pdf" },
+  bjagdg: { t: "§ 1 Bundesjagdgesetz – Inhalt des Jagdrechts", pub: "gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/bjagdg/__1.html" },
+  bb: { t: "Wildunfall und Fallwild", pub: "Ministerium für Landwirtschaft, Umwelt und Klimaschutz Brandenburg", url: "https://mleuv.brandenburg.de/mleuv/de/umwelt/jagd/wildunfall-und-fallwild/" },
   bgh18: { t: "Pressemitteilung Nr. 115/2018: Vertrag über ein Benutzerkonto bei einem sozialen Netzwerk ist vererbbar", pub: "Bundesgerichtshof · Urteil vom 12.07.2018 – III ZR 183/17", url: "https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2018/2018115.html" },
   bgh20: { t: "Pressemitteilung 2020: Umfang des Zugangs der Erben zum Benutzerkonto", pub: "Bundesgerichtshof · Beschluss vom 27.08.2020 – III ZB 30/20", url: "https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2020/2020119.html" },
+  stgb: { t: "§ 292 Strafgesetzbuch – Jagdwilderei", pub: "Bundesministerium der Justiz · gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/stgb/__292.html" },
+  nrw: { t: "Drucksache 17/10823: Identifizierung tot aufgefundener Haustiere bzw. Fundtiere", pub: "Landtag Nordrhein-Westfalen · Antwort der Landesregierung vom 04.09.2020 · PDF",
+    url: "https://gruene-fraktion-nrw.de/wp-content/uploads/2020/08/Antwort-17-10823-Fundtiere.pdf" },
+  ka: { t: "Umgang mit toten Fundtieren (Vorlage 2018/0444)", pub: "Stadt Karlsruhe · Stellungnahme zur Anfrage, Gemeinderat 17.07.2018 · PDF",
+    url: "https://web1.karlsruhe.de/ris/oparl/bodies/0001/downloadfiles/00604164.pdf" },
+  wurm: { t: "Lesegerät soll helfen, Tiere zu identifizieren", pub: "Schwäbische.de · Wurmlingen", url: "https://www.schwaebische.de/regional/tuttlingen/wurmlingen/lesegeraet-soll-helfen-tiere-zu-identifizieren-171093" },
+  berlin: { t: "Ausschreibung Tierkörperbeseitigung (Berlin)", pub: "Senatsverwaltung für Justiz und Verbraucherschutz · Bekanntmachung vom 10.05.2026 · oeffentlichevergabe.de",
+    url: "https://oeffentlichevergabe.de/ui/de/notices/a6c87a23-6468-4eb4-8510-5d08dc5950dd" },
+  vgv: { t: "§ 3 Vergabeverordnung – Schätzung des Auftragswerts", pub: "gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/vgv_2016/__3.html" },
+  eu: { t: "Verordnung (EG) Nr. 1069/2009 über tierische Nebenprodukte", pub: "Amtsblatt der EU · eur-lex.europa.eu", url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32009R1069" },
 };
 
 const EPISODES = [{
@@ -138,6 +155,41 @@ const EPISODES = [{
     { said: "Was passiert also mit deinem Account, wenn du stirbst? Er geht an deine Erben. Und damit alles, was du dort je privat geschrieben hast.", img: "schluss", src: [
       { s: null, where: "Fazit", sum: true, q: "Zusammenfassung der beiden Entscheidungen oben; gilt bundesweit." } ] },
   ] }],
+}, {
+  num: "Folge 02", title: "Wer holt eigentlich überfahrene Tiere von der Straße?", meta: "Zweiteiler · Shorts",
+  parts: [
+    { name: "Teil 1", rows: [
+      { said: "Allein in einem Jahr zählte der Jagdverband rund zweihunderttausend tote Rehe. Die meisten starben im Straßenverkehr.", img: "orig", src: [
+        { s: "djv2425", where: "Zeile „Deutschland“, Spalte „Rehwild“, und Fußnote", q: "Deutschland: <mark>200.970</mark> (Rehwild) · „Fallwild bezeichnet Tiere, die durch nicht-jagdliche Einwirkungen – <mark>überwiegend durch den Straßenverkehr</mark> – zu Tode gekommen sind.“",
+          fig: ["djv2425_z1.jpg", "djv2425_z2.jpg"], extra: "Aktuellste offizielle Zahl (Jagdjahr 2024/25), teils hochgerechnet (Brandenburg, Sachsen). Schon 2009 lag sie laut DJV bei 199 500 (nächste Quelle)." },
+        { s: "djv10", where: "Punkt „Wildtiere“", q: "Wildtiere: Unter die Räder kamen <mark>199 500 Rehe</mark> … Das errechnete der Deutsche Jagdschutzverband anhand der Jagdstatistik (Fallwild).", extra: "Älterer Vergleichswert (Bilanz 2009)." } ] },
+      { said: "Und beim Reh ist die Antwort überraschend: Nur der Jäger darf es sich nehmen … aber er muss nicht. In Sachsen etwa bleiben tote Rehe grundsätzlich in der Natur.", img: "orig", src: [
+        { s: "bjagdg", where: "Absatz 5", q: "Das Recht zur Aneignung von Wild umfaßt auch die <mark>ausschließliche Befugnis</mark>, krankes oder verendetes Wild, <mark>Fallwild</mark> […] sich anzueignen.", fig: "bjagdg1_z1.png",
+          extra: "Bundesrecht, gilt überall: Nur der Jagdausübungsberechtigte (meist der Jagdpächter) darf sich totes Wild nehmen." },
+        { s: "sachsen", where: "Abschnitt 2 „Wer darf sich totes Wild aneignen?“", q: "Das Recht, sich Wild anzueignen, steht grundsätzlich dem Jagdausübungsberechtigen zu. Er <mark>ist zur Aneignung aber nicht verpflichtet</mark>.", fig: "sachsen2_z2.png" },
+        { s: "sachsen", where: "Abschnitt 1, 2. Satz", q: "Wild ist Teil der Natur. <mark>Grundsätzlich verbleiben Wildkadaver in der Natur.</mark>", fig: "sachsen_z1.png",
+          extra: "Das gilt laut Infoblatt für Sachsen. Andere Länder regeln die Entsorgung anders, siehe nächste Quelle." },
+        { s: "sjagdg", where: "§ 2 Absatz 1", sum: true, q: "Aktueller Gesetzesstand (gültig ab 17.10.2026): Wer totes Wild findet, muss es dem Jagdausübungsberechtigten, der Jagdbehörde oder der Polizei melden; lehnt der Jäger die Übernahme ab, entscheidet die Jagdbehörde über den Verbleib. Das Infoblatt von 2019 steht dazu nicht im Widerspruch." },
+        { s: "bb", where: "Abschnitt zur Entsorgung", sum: true, q: "In Brandenburg gilt: Eignet sich der Jäger das Fallwild an, muss er den Kadaver auch entsorgen. Deshalb nennt das Video Sachsen ausdrücklich nur als Beispiel." } ] },
+      { said: "Mitnehmen darfst du es trotzdem nicht. Das wäre Wilderei. Darauf stehen bis zu drei Jahre Haft.", img: "orig", src: [
+        { s: "sachsen", where: "Abschnitt 3, vorletzter Satz", q: "<mark>Unfallwild darf nicht mitgenommen werden.</mark>" },
+        { s: "stgb", where: "Absatz 1", q: "Wer unter Verletzung fremden Jagdrechts […] dem Wild nachstellt, es fängt, erlegt oder sich oder einem Dritten <mark>zueignet</mark> […], wird mit <mark>Freiheitsstrafe bis zu drei Jahren</mark> oder mit Geldstrafe bestraft.",
+          fig: "stgb292_z1.png", extra: "Absatz 2: In besonders schweren Fällen drei Monate bis fünf Jahre." } ] },
+      { said: "Katzen und Hunde dagegen holt je nach Ort die Straßenmeisterei, der Bauhof … oder eine beauftragte Firma.", img: "grafik", src: [
+        { s: "nrw", where: "Seite 1, Vorbemerkung der Kleinen Anfrage", q: "<mark>Oftmals entfernen Straßenmeistereien überfahrene Tiere von der Fahrbahn.</mark>", extra: "Die Vorbemerkung stammt vom Fragesteller und stützt sich auf eine WDR-Recherche." },
+        { s: "wurm", where: "Artikeltext", q: "Der <mark>Bauhof</mark> in Wurmlingen ist nun durch eine private Spende mit einem Tierchip-Lesegerät ausgestattet worden." },
+        { s: "ka", where: "Antwort zu Frage 1", q: "Hierfür wird ein <mark>privater Dienstleister</mark> […] beauftragt." } ] },
+      { said: "Ihr Ziel: die Tierkörperbeseitigung. Allein Berlin hat sie gerade neu ausgeschrieben. Geschätzter Wert: rund 1,45 Millionen Euro, für bis zu vier Jahre.", img: "orig", src: [
+        { s: "ka", where: "Antwort zu Frage 1", q: "Die Abteilung Lebensmittelüberwachung und Veterinärwesen organisiert den Transport eines aufgefundenen toten Heimtieres <mark>zur Tierkörperbeseitigungsanstalt</mark>." },
+        { s: "berlin", where: "„Kurzinfo“ → Geschätzter Wert; Laufzeit unter „Details“ beim Los", sum: true, q: "Geschätzter Wert: <mark>1.452.000 EUR</mark> · Laufzeit 01.09.2026 bis 31.08.2029 · Option: Verlängerung um ein Jahr bis 31.08.2030",
+          fig: "berlin_z1.png" },
+        { s: "vgv", where: "Absatz 1, Satz 2", q: "Zudem sind <mark>etwaige Optionen oder Vertragsverlängerungen zu berücksichtigen</mark>.", extra: "Deshalb gilt der geschätzte Wert für bis zu vier Jahre (drei Jahre plus ein Jahr Option)." } ] },
+      { said: "Dort gelten Haustiere als Material der höchsten Risikoklasse. Am Ende werden sie in der Regel verbrannt.", img: "orig", src: [
+        { s: "eu", where: "Artikel 8 „Material der Kategorie 1“, Buchstabe a, Ziffer iii",
+          q: "Material der Kategorie 1 umfasst […] ganze Tierkörper und alle Körperteile […] folgender Tiere: […] andere Tiere als Nutztiere und Wildtiere, <mark>insbesondere Heim-, Zoo- und Zirkustiere</mark>",
+          fig: "eu_art8_z1.png", extra: "Die Verordnung teilt tierische Nebenprodukte in drei Kategorien nach Risiko ein (Artikel 7); Kategorie 1 ist die mit dem höchsten Risiko. Artikel 12 regelt die Beseitigung: Verbrennung, Mitverbrennung, Nutzung als Brennstoff oder, nach Drucksterilisation, Deponie. Daher „in der Regel verbrannt“." } ] },
+    ] },
+  ],
 }];
 
 const CHIP = { orig: ["orig", "Bild: Original"], grafik: ["grafik", "Bild: Grafik"], symbol: ["symbol", "Bild: Symbolbild"], schluss: ["schluss", "Schlussfolgerung"] };
