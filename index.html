@@ -120,11 +120,13 @@ const IMG = "img/";
 const S = {
   djv2425: { t: "Wildunfall-Statistik 2024/2025", pub: "Deutscher Jagdverband (DJV) · Infografik, Quelle: DJV-Handbuch 2026", url: "https://www.jagdverband.de/sites/default/files/2026-02/2026-02_Infografik_Wildunfall_Statistik_2024_2025.jpg" },
   sjagdg: { t: "Sächsisches Jagdgesetz, § 2 Aufgefundenes Wild und Unfallwild", pub: "REVOSax · Fassung gültig ab 17.10.2026", url: "https://www.revosax.sachsen.de/vorschrift/12495-Saechsisches-Jagdgesetz" },
+  euhk: { t: "EU-Parlament stimmt für „Cats and Dogs“-Verordnung", pub: "Deutscher Tierschutzbund · Pressemeldung 2026", url: "https://www.tierschutzbund.de/ueber-uns/aktuelles/presse/meldung/eu-parlament-stimmt-fuer-cats-and-dogs-verordnung/" },
   djv10: { t: "Daten und Fakten zu Wildunfällen in Deutschland – Bilanz 2009", pub: "Deutscher Jagdverband (DJV) · Faktenblatt · PDF", url: "https://www.jagdverband.de/sites/default/files/fact_sheet_wildunfallgeschehen2010_0.pdf" },
   sachsen: { t: "Hinweise zum Vorgehen beim Fund toten Wildes und bei Unfallwild", pub: "Informationsblatt der Sächsischen Staatsministerien für Soziales und für Umwelt · Stand 05.06.2019 · PDF",
     url: "https://www.wald.sachsen.de/Informationsblatt_totesWildUnfallwild2019.pdf" },
   bjagdg: { t: "§ 1 Bundesjagdgesetz – Inhalt des Jagdrechts", pub: "gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/bjagdg/__1.html" },
   bb: { t: "Wildunfall und Fallwild", pub: "Ministerium für Landwirtschaft, Umwelt und Klimaschutz Brandenburg", url: "https://mleuv.brandenburg.de/mleuv/de/umwelt/jagd/wildunfall-und-fallwild/" },
+  tsbsh: { t: "Meilenstein für den Tierschutz: Katzenschutzverordnung tritt in Schleswig-Holstein in Kraft", pub: "Deutscher Tierschutzbund · Pressemeldung vom 25.06.2026", url: "https://www.tierschutzbund.de/ueber-uns/aktuelles/presse/meldung/katzenschutzverordnung-tritt-in-schleswig-holstein-in-kraft/" },
   bgh18: { t: "Pressemitteilung Nr. 115/2018: Vertrag über ein Benutzerkonto bei einem sozialen Netzwerk ist vererbbar", pub: "Bundesgerichtshof · Urteil vom 12.07.2018 – III ZR 183/17", url: "https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2018/2018115.html" },
   bgh20: { t: "Pressemitteilung 2020: Umfang des Zugangs der Erben zum Benutzerkonto", pub: "Bundesgerichtshof · Beschluss vom 27.08.2020 – III ZB 30/20", url: "https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2020/2020119.html" },
   stgb: { t: "§ 292 Strafgesetzbuch – Jagdwilderei", pub: "Bundesministerium der Justiz · gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/stgb/__292.html" },
@@ -137,6 +139,12 @@ const S = {
     url: "https://oeffentlichevergabe.de/ui/de/notices/a6c87a23-6468-4eb4-8510-5d08dc5950dd" },
   vgv: { t: "§ 3 Vergabeverordnung – Schätzung des Auftragswerts", pub: "gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/vgv_2016/__3.html" },
   eu: { t: "Verordnung (EG) Nr. 1069/2009 über tierische Nebenprodukte", pub: "Amtsblatt der EU · eur-lex.europa.eu", url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32009R1069" },
+  ffx: { t: "Mikrochip und Registrierung schützen Haustiere auch im Urlaub", pub: "Deutscher Tierschutzbund / FINDEFIX · Pressemeldung vom 05.07.2023 · PDF",
+    url: "https://www.findefix.com/fileadmin/content/Bilder/5_Ueber-uns/Presse/PM_2023/230705_Mikrochip_und_Registrierung.pdf" },
+  tasso: { t: "Tier registrieren", pub: "TASSO e. V. · Startseite", url: "https://www.tasso.net/" },
+  hd: { t: "Katzenschutzverordnung soll Tierleid mindern", pub: "Stadt Heidelberg · Pressemitteilung vom 16.06.2026", url: "https://www.heidelberg.de/HD/Presse/16_06_2026+katzenschutzverordnung+soll+tierleid+mindern.html" },
+  stg: { t: "Stuttgart beschließt Katzenschutzverordnung: Pflicht zur Kastration und Registrierung ab März 2027", pub: "Landeshauptstadt Stuttgart · Meldung Oktober 2026",
+    url: "https://www.stuttgart.de/service/aktuelle-meldungen/2026/oktober/stuttgart-beschliesst-katzenschutzverordnung-pflicht-zur-kastration-und-registrierung-ab-maerz-2027" },
 };
 
 const EPISODES = [{
@@ -188,6 +196,34 @@ const EPISODES = [{
         { s: "eu", where: "Artikel 8 „Material der Kategorie 1“, Buchstabe a, Ziffer iii",
           q: "Material der Kategorie 1 umfasst […] ganze Tierkörper und alle Körperteile […] folgender Tiere: […] andere Tiere als Nutztiere und Wildtiere, <mark>insbesondere Heim-, Zoo- und Zirkustiere</mark>",
           fig: "eu_art8_z1.png", extra: "Die Verordnung teilt tierische Nebenprodukte in drei Kategorien nach Risiko ein (Artikel 7); Kategorie 1 ist die mit dem höchsten Risiko. Artikel 12 regelt die Beseitigung: Verbrennung, Mitverbrennung, Nutzung als Brennstoff oder, nach Drucksterilisation, Deponie. Daher „in der Regel verbrannt“." } ] },
+    ] },
+    { name: "Teil 2", rows: [
+      { said: "Die unbequeme Antwort: oft nicht. Denn dafür müsste erst mal jemand herausfinden, wem das Tier gehört.", img: "orig", concl: true, src: [
+        { s: "nrw", where: "Seite 2, Antwort zu Fragen 1 und 2", q: "Eine <mark>Verpflichtung zur Erfassung tot aufgefundener Haustiere besteht weder</mark> für die Kreise und kreisfreien Städte noch für den Landesbetrieb Straßenbau.", fig: ["nrw2_z1.png", "nrw2_z2.png"] },
+        { s: "wurm", where: "Artikeltext, Aussage des Bürgermeisters", q: "Denn gerade, wenn eine Katze im Straßenverkehr ums Leben kommt, sei es <mark>meist nicht möglich, diese einem Besitzer zuzuordnen</mark>." } ] },
+      { said: "Und das geht meist nur über seinen Chip. Doch der wird längst nicht immer ausgelesen. In Nordrhein-Westfalen etwa schrieb die Landesregierung: Ein routinemäßiges Auslesen findet nicht statt.", img: "orig", src: [
+        { s: "ka", where: "Antwort zu Frage 3", q: "Tätowierungen sind <mark>nur noch selten anzutreffen</mark> und wenn, dann in Kombination mit einem Chip." },
+        { s: "nrw", where: "Seite 2, Antwort zu Frage 3", q: "<mark>Ein routinemäßiges Auslesen der Mikrochips findet nicht statt.</mark>", fig: "nrw_z1.png" } ] },
+      { said: "In Karlsruhe dagegen prüft die Firma, die die Tiere abholt, den Chip … und informiert den Halter.", img: "orig", src: [
+        { s: "ka", where: "Antworten zu Fragen 3 und 4", q: "Die für den Transport zur Tierkörperbeseitigungsanstalt beauftragte Firma <mark>überprüft die mögliche Kennzeichnung</mark> des Tieres (Chip oder Tätowierung). […] Ist eine Kennzeichnung […] abzulesen und das Tier wurde bei TASSO e.V. registriert, <mark>werden die Besitzer vom Transportdienstleister über den Fund ihres Tieres informiert</mark>.",
+          fig: ["karlsruhe_z1.png", "karlsruhe_z2.png"], extra: "Stand der Stellungnahme: 2018." } ] },
+      { said: "Aber genau da liegt der Haken. Der Chip allein nützt nichts. Er muss registriert sein.", img: "orig", src: [
+        { s: "ffx", where: "Abschnitt „Um die Registrierung müssen sich Tierhalter meist selbst kümmern“, letzter Satz", q: "„Ist die Chipnummer nicht registriert, ist es <mark>schwer bis unmöglich herauszufinden, wo das Tier hingehört</mark>.“", fig: ["ffx_reg_z1.png", "ffx_reg_z2.png"] },
+        { s: "ka", where: "Antwort zu Frage 4", q: "[…] und das Tier wurde <mark>bei TASSO e.V. registriert</mark>, werden die Besitzer […] informiert." } ] },
+      { said: "Und das passiert nicht automatisch: Der Tierarzt setzt den Chip zwar ein. Eintragen musst du ihn aber meistens selbst.", img: "orig", src: [
+        { s: "ffx", where: "Abschnitt „Um die Registrierung müssen sich Tierhalter meist selbst kümmern“", q: "Um sie muss sich der Halter selbst kümmern, da <mark>die wenigsten Tierärzte die Daten automatisch an ein Haustierregister übermitteln</mark>.", fig: "ffx_ta_z2.png" },
+        { s: "euhk", where: "Abschnitt „Chippflicht ist wichtige Errungenschaft“", q: "Dass alle Katzen und Hunde zukünftig mit einem Mikrochip gekennzeichnet und in einem Haustierregister wie FINDEFIX registriert werden müssen, gehört zu den wichtigsten Errungenschaften der Verordnung. … dass private Tierhalter ihre Hunde erst nach einer langen <mark>Übergangszeit von zehn Jahren bzw. Katzen nach 15 Jahren</mark> verpflichtend kennzeichnen lassen und registrieren müssen …",
+          extra: "Ausblick: Die EU-Verordnung wurde 2026 beschlossen. Für private Halter gilt die Pflicht erst nach langen Übergangsfristen. Stand heute bleibt es also dabei: Registrieren musst du meist selbst." } ] },
+      { said: "Bei TASSO oder FINDEFIX ist das kostenlos. Und immer mehr Städte machen es für Freigänger-Katzen sogar zur Pflicht.", img: "orig", src: [
+        { s: "ffx", where: "Abschnitt „Um die Registrierung …“", q: "Die anschließende <mark>Registrierung bei FINDEFIX ist kostenfrei</mark>.", fig: "ffx_z1.png" },
+        { s: "tsbsh", where: "Erster Absatz", q: "<mark>In Schleswig-Holstein tritt zum 1. Juli 2026 eine landesweite Katzenschutzverordnung in Kraft.</mark> […] Verordnung mit Kastrations-, Kennzeichnungs- und <mark>Registrierungspflicht für Freigängerkatzen</mark>", fig: "tsb_sh_z1.png",
+          extra: "Hier gilt die Pflicht sogar für ein ganzes Bundesland." },
+        { s: "tasso", where: "Startseite, Bereich „Tier registrieren“", q: "Registrieren Sie es jetzt <mark>kostenlos</mark> bei TASSO." },
+        { s: "hd", where: "Pressemitteilung", sum: true, q: "Pressemitteilung der Stadt Heidelberg zu ihrer Katzenschutzverordnung (Kennzeichnung und Registrierung von Freigängerkatzen)." },
+        { s: "stg", where: "Überschrift der Meldung", q: "Pflicht zur Kastration und <mark>Registrierung ab März 2027</mark>.",
+          extra: "„Immer mehr“ ist eine Schlussfolgerung aus mehreren neuen Verordnungen 2024 bis 2026 (u. a. Heidelberg, Stuttgart); eine bundesweite Gesamtzahl haben wir nicht gefunden. Rechtsgrundlage ist § 13b Tierschutzgesetz. Eine bundesweite Pflicht gibt es nicht." } ] },
+      { said: "Wenn dein Haustier überfahren wird … erfährst du es? Das hängt nicht nur von deiner Stadt ab. Sondern auch von dir.", img: "schluss", src: [
+        { s: null, where: "Fazit", sum: true, q: "Zusammenfassung der Belege oben: Ob ein Chip ausgelesen wird, regelt jede Stadt anders; ob der Halter gefunden werden kann, hängt davon ab, ob der Chip registriert ist." } ] },
     ] },
   ],
 }];
