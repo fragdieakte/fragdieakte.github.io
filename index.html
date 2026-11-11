@@ -127,6 +127,11 @@ const S = {
   bjagdg: { t: "§ 1 Bundesjagdgesetz – Inhalt des Jagdrechts", pub: "gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/bjagdg/__1.html" },
   bb: { t: "Wildunfall und Fallwild", pub: "Ministerium für Landwirtschaft, Umwelt und Klimaschutz Brandenburg", url: "https://mleuv.brandenburg.de/mleuv/de/umwelt/jagd/wildunfall-und-fallwild/" },
   tsbsh: { t: "Meilenstein für den Tierschutz: Katzenschutzverordnung tritt in Schleswig-Holstein in Kraft", pub: "Deutscher Tierschutzbund · Pressemeldung vom 25.06.2026", url: "https://www.tierschutzbund.de/ueber-uns/aktuelles/presse/meldung/katzenschutzverordnung-tritt-in-schleswig-holstein-in-kraft/" },
+  bgb973: { t: "§ 973 BGB – Eigentumserwerb des Finders", pub: "gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/bgb/__973.html" },
+  bgb978: { t: "§ 978 BGB – Fund in öffentlicher Behörde oder Verkehrsanstalt", pub: "gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/bgb/__978.html" },
+  bgb979: { t: "§ 979 BGB – Verwertung", pub: "gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/bgb/__979.html" },
+  bgb981: { t: "§ 981 BGB – Empfang des Versteigerungserlöses", pub: "gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/bgb/__981.html" },
+  bgb965: { t: "§ 965 BGB – Anzeigepflicht des Finders", pub: "gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/bgb/__965.html" },
   bgh18: { t: "Pressemitteilung Nr. 115/2018: Vertrag über ein Benutzerkonto bei einem sozialen Netzwerk ist vererbbar", pub: "Bundesgerichtshof · Urteil vom 12.07.2018 – III ZR 183/17", url: "https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2018/2018115.html" },
   bgh20: { t: "Pressemitteilung 2020: Umfang des Zugangs der Erben zum Benutzerkonto", pub: "Bundesgerichtshof · Beschluss vom 27.08.2020 – III ZB 30/20", url: "https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2020/2020119.html" },
   stgb: { t: "§ 292 Strafgesetzbuch – Jagdwilderei", pub: "Bundesministerium der Justiz · gesetze-im-internet.de", url: "https://www.gesetze-im-internet.de/stgb/__292.html" },
@@ -163,6 +168,28 @@ const EPISODES = [{
     { said: "Was passiert also mit deinem Account, wenn du stirbst? Er geht an deine Erben. Und damit alles, was du dort je privat geschrieben hast.", img: "schluss", src: [
       { s: null, where: "Fazit", sum: true, q: "Zusammenfassung der beiden Entscheidungen oben; gilt bundesweit." } ] },
   ] }],
+}, {
+  num: "Folge 03", title: "Was passiert mit Sachen, die im Fundbüro keiner abholt?", meta: "Short",
+  parts: [
+    { name: "Video", rows: [
+      { said: "Auf der Straße gilt: Du meldest deinen Fund beim Fundbüro. Meldet sich sechs Monate lang niemand, gehört er dir.", img: "orig", src: [
+        { s: "bgb965", where: "Absatz 2", q: "Kennt der Finder die Empfangsberechtigten nicht …, so hat er den Fund … unverzüglich <mark>der zuständigen Behörde anzuzeigen</mark>. Ist die Sache nicht mehr als zehn Euro wert, so bedarf es der Anzeige nicht." },
+        { s: "bgb973", where: "Absatz 1, Satz 1", q: "<mark>Mit dem Ablauf von sechs Monaten nach der Anzeige des Fundes bei der zuständigen Behörde erwirbt der Finder das Eigentum an der Sache</mark>, es sei denn, dass vorher ein Empfangsberechtigter dem Finder bekannt geworden ist oder sein Recht bei der zuständigen Behörde angemeldet hat.", fig: "f03_p973.png",
+          extra: "„Auf der Straße“ steht bewusst als Beispiel: In Geschäften oder auf Privatgelände können Sonderfälle gelten." } ] },
+      { said: "Im Bus, in der Bahn oder im Rathaus gilt das nicht. Dort musst du alles abgeben. Und behalten darfst du es nie.", img: "orig", src: [
+        { s: "bgb978", where: "Absatz 1", q: "Wer eine Sache in den Geschäftsräumen oder den <mark>Beförderungsmitteln einer öffentlichen Behörde oder einer dem öffentlichen Verkehr dienenden Verkehrsanstalt</mark> findet und an sich nimmt, hat die Sache unverzüglich … <mark>abzuliefern</mark>. Die Vorschriften der §§ 965 bis 967 und 969 bis 977 <mark>finden keine Anwendung</mark>.", fig: "f03_p978a.png",
+          extra: "Weil § 973 hier nicht gilt, wird der Finder nie Eigentümer." } ] },
+      { said: "Holt der Besitzer es ab, steht dir ab fünfzig Euro Wert immerhin ein kleiner Finderlohn zu. Holt es aber keiner ab, kann es versteigert werden, sogar im Internet.", img: "orig", src: [
+        { s: "bgb978", where: "Absatz 2", q: "Ist die Sache <mark>nicht weniger als 50 Euro wert</mark>, so kann der Finder von dem Empfangsberechtigten einen Finderlohn verlangen. Der <mark>Finderlohn besteht in der Hälfte des Betrags</mark>, der sich bei Anwendung des § 971 Abs. 1 Satz 2, 3 ergeben würde.", fig: "f03_p978b.png",
+          extra: "Ausgeschlossen, wenn der Finder Bediensteter der Behörde oder des Verkehrsbetriebs ist. Normaler Finderlohn (§ 971): 5 % bis 500 Euro, darüber 3 %." },
+        { s: "bgb979", where: "Absatz 1 und 1a", q: "Die Behörde oder die Verkehrsanstalt kann die an sie abgelieferte Sache <mark>öffentlich versteigern lassen</mark>. … Die Versteigerung kann … auch als allgemein zugängliche <mark>Versteigerung im Internet</mark> über eine Versteigerungsplattform erfolgen.", fig: "f03_p979.png" } ] },
+      { said: "Und das Geld bekommt dann am Ende die Stadt, der Staat … oder das Verkehrsunternehmen selbst.", img: "orig", src: [
+        { s: "bgb981", where: "Absatz 1", q: "Sind seit dem Ablauf der in der öffentlichen Bekanntmachung bestimmten Frist <mark>drei Jahre verstrichen</mark>, so fällt der Versteigerungserlös … bei Landesbehörden … an den Fiskus des Bundesstaats, bei Gemeindebehörden … <mark>an die Gemeinde</mark>, bei Verkehrsanstalten, die von einer Privatperson betrieben werden, <mark>an diese</mark>.", fig: "f03_p981.png",
+          extra: "„Am Ende“ steht vereinfacht für diese Drei-Jahres-Frist. Im Gesetz steht für Bundesbehörden bis heute noch „Reichsfiskus“." } ] },
+      { said: "Was passiert also mit Sachen, die keiner abholt? Auf der Straße gefunden, können sie dir gehören. In der Bahn gefunden … nie.", img: "schluss", src: [
+        { s: null, where: "Fazit", sum: true, q: "Zusammenfassung von § 973 und § 978 BGB oben." } ] },
+    ] },
+  ],
 }, {
   num: "Folge 02", title: "Wer holt eigentlich überfahrene Tiere von der Straße?", meta: "Zweiteiler · Shorts",
   parts: [
